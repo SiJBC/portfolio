@@ -48,7 +48,7 @@ const header = () => {
           justifyContent={['center', 'center', 'left']}
           width='100%'
         >
-          <Button
+          {/* <Button
             margin='auto'
             marginInline={['auto', 'auto', '0']}
             marginTop='6'
@@ -58,7 +58,7 @@ const header = () => {
             size='sm'
           >
             Download Resume
-          </Button>
+          </Button> */}
         </Box>
       </Box>
     </Flex>
