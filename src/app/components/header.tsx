@@ -27,7 +27,7 @@ const header = () => {
           fontSize='2xl'
           fontWeight='bold'
         >
-          Hi, I am Simon, <br></br> Full-Stack Developer.
+          Hi, I am Simon
         </Text>
         <Text
           marginTop={['6', '6', '12']}
