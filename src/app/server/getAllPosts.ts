@@ -1,21 +1,21 @@
 "use server"
 import { gql } from "@apollo/client"
-import { apolloClient } from "../lib/graphql-client"
+import { apolloClient, apolloClientWordpress } from "../lib/graphql-client"
 
-export async function getAllPosts() {
+export async function getAllWPPosts() {
   "use server"
 
-  const res = await apolloClient.query({
+  const res = await apolloClientWordpress.query({
     query: gql`
-      query {
-        projectCollection {
-          items {
-            description
-            featureImage {
-              url
+      query NewQuery {
+        posts {
+          edges {
+            node {
+              id
+              title
+              excerpt
+              slug
             }
-            tech
-            name
           }
         }
       }

@@ -1,3 +1,4 @@
+'use client'
 import {
   Card,
   CardHeader,
@@ -9,7 +10,7 @@ import {
   Button
 } from '@chakra-ui/react'
 
-import React from 'react'
+import React, { useState } from 'react'
 
 type CardProps = {
   title: string
@@ -17,20 +18,33 @@ type CardProps = {
   href?: string
 }
 
-const postCard: React.FC<CardProps> = ({ title, description, href }) => {
+const PostCard: React.FC<CardProps> = ({ title, description, href }) => {
+  const [hover, setHover] = useState<boolean>(false)
   return (
-    <Card>
+    <Card
+      onClick={() => window.open(href ?? '')}
+      _hover={{
+        cursor: 'pointer',
+        opacity: '0.75',
+        transform: 'scale(1.01)',
+        bgColor: 'gray.300'
+      }}
+      backgroundColor={'gray.100'}
+      height={'250px'}
+    >
       <CardHeader>
         <Heading size='md'> {title}</Heading>
       </CardHeader>
       <CardBody>
-        <Text>{description}</Text>
+        <div
+          dangerouslySetInnerHTML={{ __html: description.slice(0, 50) }}
+        ></div>
       </CardBody>
       <CardFooter>
-        <Button>View here</Button>
+        <Button bgColor={'white'}>View here</Button>
       </CardFooter>
     </Card>
   )
 }
 
-export default postCard
+export default PostCard

@@ -38,11 +38,19 @@ const ProjectCard: React.FC<CardProps> = ({
 }) => {
   const [hover, setHover] = useState<boolean>(false)
   return (
-    <Link href={link ?? ''}>
+    <Link
+      _hover={{
+        textDecoration: 'none'
+      }}
+      href={link ?? ''}
+    >
       <Card
-        style={{ opacity: hover ? '0.5' : '1' }}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        _hover={{
+          cursor: 'pointer',
+          opacity: '0.75',
+          transform: 'scale(1.01)',
+          bgColor: 'gray.300'
+        }}
         direction={{ base: 'column', sm: 'row' }}
         overflow='hidden'
         variant='outline'

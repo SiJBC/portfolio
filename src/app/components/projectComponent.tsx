@@ -1,3 +1,4 @@
+'use client'
 import { Box, Flex, Text, Spinner } from '@chakra-ui/react'
 import React, { useEffect, useState, Suspense } from 'react'
 import Card from '@/app/components/projectCard'
@@ -30,7 +31,6 @@ const ProjectComponent = () => {
       .then(data => {
         setLoading(false)
         setCards(data.data.projectCollection.items)
-        console.log(data.data.projectCollection.items)
       })
   }, [])
 

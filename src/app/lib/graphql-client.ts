@@ -22,6 +22,11 @@ export const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
 })
 
+export const apolloClientWordpress = new ApolloClient({
+  uri: `https://simoncolman.com/graphql`,
+  cache: new InMemoryCache(),
+})
+
 export const graphqlClient = new GraphQLClient(
   `https://graphql.contentful.com/content/v1/spaces/u758xozvs7bq/environments/master`,
   {
