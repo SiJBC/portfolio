@@ -13,7 +13,15 @@ export default function PostComponent () {
   useEffect(() => {
     getAllWPPosts().then(res => {
       setPosts(res.data.posts.edges.map((el: any) => el.node))
-      setLoading(false)
+      // a promise that takes 2 seconds to resolve
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('foo')
+        }, 2000)
+      })
+      promise.then(() => {
+        setLoading(false)
+      })
     })
   }, [])
 
