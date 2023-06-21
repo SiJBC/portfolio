@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
-import { Flex, Image, Link } from '@chakra-ui/react'
+import { Flex, Image } from '@chakra-ui/react'
+import Link from 'next/link'
 
 function footer () {
   return (
